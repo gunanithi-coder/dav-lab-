@@ -1,0 +1,17 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data = {
+    "Product": ["Laptop", "Mobile", "Tablet", "Laptop", "Mobile"],
+    "Sales": [50000, 30000, 20000, 70000, 40000]
+}
+
+df = pd.DataFrame(data)
+sales = df.groupby("Product")["Sales"].sum()
+print(sales)
+
+sales.plot(kind="bar", color="skyblue")
+plt.title("Sales by Product")
+plt.xlabel("Product")
+plt.ylabel("Sales")
+plt.show()
